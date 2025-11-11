@@ -1,0 +1,1419 @@
+/* === GLOBAL === */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #ffffff, #f6fff7);
+    color: #111;
+}
+
+/* === HERO SECTION === */
+.hero-section {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 120px;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 65%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 550;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 0 0 20px;
+    margin-top: -90px;
+    margin-left: -20px;
+}
+
+
+.hero-content h1 span {
+    color: #32b768;
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: #444;
+    margin: 10px 0 25px;
+    line-height: 1.6;
+    margin-left: -15px;
+}
+
+
+.explore-btn {
+    background: #16b455;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.explore-btn:hover {
+    background: #289b58;
+}
+
+/* === IMAGE SECTION === */
+.hero-image {
+    flex: 1;
+    position: relative;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.plant-img {
+    margin-top: -260px;
+    width: 660px;
+    /* was 520px */
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+    position: relative;
+    right: 40px;
+    z-index: 2;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -40px;
+    width: 550px;
+    height: 480px;
+    background: url("images/bg-leaf.png") no-repeat center;
+    background-size: contain;
+    opacity: 0.22;
+    z-index: 0;
+    filter: blur(1px);
+    transform: rotate(-50deg);
+    /* rotate counterclockwise */
+    transform-origin: center;
+    /* keeps rotation centered */
+}
+
+
+
+/* === INFO CARDS === */
+.info-card {
+    position: absolute;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+.info-card img {
+    width: 24px;
+    height: 24px;
+}
+
+.info-card h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #305441;
+}
+
+.info-card p {
+    text-align: left;
+    margin: 0;
+    font-size: 11px;
+    color: #3e8052;
+    font-weight: 600;
+}
+
+/* Positioning */
+.daylight {
+    top: -100px;
+    right: 50px;
+}
+
+.wetness {
+    bottom: 120px;
+    left: 30px;
+}
+
+/* === ARROW IMAGES === */
+.arrow-daylight {
+    position: absolute;
+    top: 220px;
+    /* adjust vertically */
+    right: 460px;
+    /* adjust horizontally */
+    width: 45px;
+    transform: rotate(95deg);
+    z-index: 1;
+}
+
+.arrow-wetness {
+    position: absolute;
+    bottom: 500px;
+    left: 460px;
+    width: 45px;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/* === PRODUCT SECTION === */
+.product-section {
+    margin-top: 20px;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.product-box {
+    background: #72cf84;
+    border-radius: 15px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 60px 60px 100px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* angled top edge */
+.product-box::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    /* lift it higher to hide top gap */
+    left: 0px;
+    /* extend slightly to the left */
+    width: 690px;
+    /* make it a bit wider */
+    height: 140px;
+    /* increase height for full overlap */
+    background: #72cf84;
+    clip-path: polygon(0 -300%, 100% 75%, 100% 100%, 0 100%);
+    z-index: 2;
+    /* keeps it above the main box */
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 25px;
+    /* ✅ add this */
+
+
+}
+
+
+.product-box h2 {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: -110px;
+    margin-left: -1040px;
+    /* pulls it upward */
+    position: relative;
+    z-index: 2;
+    /* keeps it above the green box */
+}
+
+
+.product-box p {
+    color: #eaffec;
+    font-size: 15px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    text-align: left;
+    /* move text to the left */
+    max-width: 550px;
+    /* keeps it nicely aligned under title */
+    margin-left: -18px;
+    /* same alignment as your heading */
+    margin-top: -10px;
+    /* small vertical adjustment */
+    position: relative;
+    z-index: 2;
+}
+
+
+/* product cards */
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    width: 180px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+
+/* === INDIVIDUAL PRODUCT CARD IMAGE ADJUSTMENTS === */
+
+.product-card:nth-child(1) img {
+    width: 75%;
+    /* resize */
+    height: auto;
+    position: relative;
+    top: 40px;
+    /* move down */
+    left: 15px;
+    /* move right */
+}
+
+.product-card:nth-child(2) img {
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: 10px;
+    left: 0px;
+}
+
+.product-card:nth-child(3) img {
+    width: 80%;
+    height: auto;
+    position: relative;
+    top: -30px;
+    /* move down */
+    left: -5px;
+}
+
+.product-card:nth-child(4) img {
+    width: 50%;
+    height: auto;
+    position: relative;
+    top: 20px;
+    left: 0px;
+}
+
+.product-card:nth-child(5) img {
+    width: 78%;
+    height: auto;
+    position: relative;
+    top: 50px;
+    left: -5px;
+    /* move slightly left */
+}
+
+
+
+
+
+.product-card h4 {
+    
+    max-width: 140px;
+    font-size: 15px;
+    color: #35835b;
+    margin: 0px;
+}
+
+/* === HANGING PLANTS === */
+.hanging-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 0px;
+
+    /* bring the hanging plants closer */
+    position: relative;
+    z-index: 1;
+    /* ✅ sits below the product box */
+
+}
+
+.hanger {
+    position: relative;
+}
+
+.hanger::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    /* start from the top of the hanger container */
+    left: 50%;
+    width: 2.5px;
+    height: 130px;
+    background: #8f754f;
+    transform: translateX(-20%);
+    z-index: 0;
+    /* ✅ send line behind */
+}
+
+/* Individual adjustments using child selectors */
+.hanger:nth-child(1)::before {
+    height: 140px;
+    /* longer */
+}
+
+.hanger:nth-child(1) img {
+    margin-top: 110px;
+    margin-left: 4.5px;
+}
+
+
+
+
+.hanger:nth-child(2)::before {
+    height: 70px;
+    /* shorter */
+}
+
+.hanger:nth-child(2) img {
+    margin-top: 30px;
+    margin-left: -6px;
+}
+
+
+
+
+.hanger:nth-child(3)::before {
+    height: 50px;
+}
+
+.hanger:nth-child(3) img {
+    margin-top: 20px;
+}
+
+
+
+
+.hanger:nth-child(4)::before {
+    height: 90px;
+}
+
+.hanger:nth-child(4) img {
+    margin-top: 50px;
+    margin-left: 3px;
+}
+
+
+
+
+.hanger:nth-child(5)::before {
+    height: 140px;
+}
+
+.hanger:nth-child(5) img {
+    margin-top: 140px;
+    margin-left: 1px;
+}
+
+
+.hanger img {
+    width: 120px;
+    opacity: 0.9;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)) blur(0.4px);
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1) 30%,
+            /* fully visible until here */
+            rgba(0, 0, 0, 0.6) 50%,
+            /* starts fading earlier */
+            transparent 100%
+            /* fades out more gradually */
+        );
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1) 30%,
+            rgba(0, 0, 0, 0.6) 50%,
+            transparent 100%);
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* === WHY CHOOSE US SECTION === */
+
+.why-choose-section {
+    margin-top: -500px;
+    background: #fff;
+    text-align: center;
+    padding: 140px 180px 100px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.why-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.why-header .sub-heading {
+    color: #32b768;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.why-header .desc {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 auto 70px;
+}
+
+/* Content Layout */
+.why-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.why-left,
+.why-right {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.why-center {
+    width: 30%;
+}
+
+.why-center img {
+    width: 100%;
+    max-width: 360px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+}
+
+/* Items */
+.why-item {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.why-item .num {
+    background: #555;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.why-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+}
+
+.why-item p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-top: 5px;
+    max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .why-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .why-left,
+    .why-right {
+        width: 100%;
+        align-items: center;
+    }
+
+    .why-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-item .num {
+        margin: 0 0 10px 0;
+    }
+
+    .why-item p {
+        max-width: 500px;
+    }
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+
+/* === STATS SECTION === */
+.stats-section {
+    background: url("images/leaves-bg.png") center/cover no-repeat;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.stats-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 20, 1, 0.75);
+    /* dark overlay */
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+}
+
+.stat-item img {
+    width: 70px;
+    height: 70px;
+}
+
+.stat-text h3 {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.stat-text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .stats-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+
+/* === BEST SELLING SECTION (SCROLLABLE) === */
+
+.best-selling-section {
+    background-color: #e9f3ec;
+    background-image: url("images/bg-selling-leaf.png");
+    background-repeat: no-repeat;
+    background-position: right 0px top -30px;
+    /* ← move it left (increase 120px if you want more) */
+    background-size: 440px auto;
+    /* adjust leaf size */
+    background-attachment: scroll;
+    /* optional, prevents fixed parallax */
+    padding: 100px 85px;
+    font-family: "Poppins", sans-serif;
+    color: #111;
+    position: relative;
+}
+
+
+.best-selling-section .section-title {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin: 0 0 40px;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.preview-image {
+    display: block;
+    width: 260px;
+    /* fixed width */
+    height: 260px;
+    /* fixed height */
+    object-fit: contain;
+    /* keeps image proportions inside box */
+    margin: 60px 0 0 80px;
+    /* adjust this to position */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.95;
+}
+
+.preview-image.fade {
+    opacity: 0.4;
+}
+
+
+.best-selling-content {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    /* space between text block and slider */
+}
+
+
+
+/* === Product Info (Name + Description side by side) === */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+}
+
+.info-row h3 {
+    margin-top: -400px;
+    font-size: 35px;
+    max-width: 400px;
+    font-weight: 700;
+    margin-left: 430px;
+    color: #111;
+    flex: 0 0 370px;
+    /* fixed width for the name */
+}
+
+.info-row p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    flex: 1;
+    max-width: 700px;
+    max-height: 200px;
+    margin-left: -80px;
+    margin-top: -300px;
+}
+
+
+/* === Explore All Button (Explore10) === */
+.explore10-btn {
+    background: #32b768;
+    color: #fff;
+    border: none;
+    padding: 10px 58px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    transition: background 0.25s ease, transform 0.2s ease;
+    align-self: flex-start;
+    display: inline-block;
+    margin-left: 440px;
+    /* aligns it under text */
+    margin-top: -190px;
+}
+
+.explore10-btn:hover {
+    background: #2da35c;
+    transform: translateY(-2px);
+}
+
+
+/* Horizontal slider */
+.product-slider {
+    margin-top: 40px;
+    margin-bottom: 280px;
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 4px 20px;
+    scroll-behavior: smooth;
+    /* smooth manual scroll */
+    -webkit-overflow-scrolling: touch;
+}
+
+.product-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.product-slider::-webkit-scrollbar-thumb {
+    background: #b6ccb6;
+    border-radius: 4px;
+
+}
+
+/* Cards */
+.product-card {
+    background: #fff;
+    min-width: 200px;
+    border-radius: 16px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    transition: transform .35s ease, box-shadow .35s ease;
+    will-change: transform;
+    position: relative;
+
+}
+
+.product-card img {
+    width: 100%;
+    height: 210px;
+    /* fixed height for all images */
+    object-fit: contain;
+    transition: transform .3s ease;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* === Individual image positioning (manual fine-tuning) === */
+/* You can adjust: margin-top, left offset, width, and height */
+
+.product-card:nth-child(1) img {
+    margin-top: -50px;
+    /* vertical position */
+    margin-left: 0px;
+    /* horizontal position */
+    width: 100%;
+    /* image width */
+    height: 210px;
+    /* image height */
+}
+
+/* Dracaena */
+
+.product-card:nth-child(2) img {
+    margin-top: -15px;
+    margin-left: -30px;
+    width: 130%;
+    height: 210px;
+}
+
+/* Snake Plant */
+
+.product-card:nth-child(3) img {
+    margin-top: 25px;
+    margin-left: -30px;
+    width: 130%;
+    height: 210px;
+}
+
+/* Money Plant */
+
+.product-card:nth-child(4) img {
+    margin-top: -30px;
+    margin-left: 0px;
+    width: 100%;
+    height: 210px;
+}
+
+/* Rubber Plant */
+
+.product-card:nth-child(5) img {
+    margin-top: -60px;
+    margin-left: -10px;
+    width: 120%;
+    height: 210px;
+}
+
+/* Ficus */
+
+.product-card:nth-child(6) img {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 100%;
+    height: 230px;
+}
+
+/* Gardenia */
+
+.product-card:nth-child(7) img {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 100%;
+    height: 210px;
+}
+
+/* Croton */
+
+.product-card:nth-child(8) img {
+    margin-top: 20px;
+    margin-left: -5px;
+    width: 110%;
+    height: 220px;
+}
+
+/* Difenbachia */
+
+.product-card:nth-child(9) img {
+    margin-top: 18px;
+    margin-left: 0px;
+    width: 100%;
+    height: 200px;
+}
+
+/* Areca Palm */
+
+.product-card:nth-child(10) img {
+    margin-top: 22px;
+    margin-left: 0px;
+    width: 100%;
+    height: 200px;
+}
+
+/* Caladium */
+
+
+
+.product-card h4 {
+    position: absolute;
+    bottom: 20px;
+    /* 20px from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    width: 100%;
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: scale(1.08);
+    z-index: 3;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+}
+
+.product-card:hover img {
+    transform: scale(1.25);
+}
+
+
+
+/* Optional small text fade when plant changes */
+#plantName,
+#plantDesc {
+    transition: opacity .25s ease;
+}
+
+.text-fade {
+    opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .best-selling-section {
+        padding: 80px 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .best-selling-section {
+        padding: 60px 20px;
+    }
+
+    .product-card {
+        min-width: 170px;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+/* === EXPORT MODES SECTION === */
+.export-section {
+    position: relative;
+    padding: 100px 120px;
+    background: #f8fcf9;
+    font-family: "Poppins", sans-serif;
+    overflow: visible;
+}
+
+.export-bg-img {
+    position: absolute;
+    top: -300px;
+    /* move it higher to peek out */
+    left: 0px;
+    /* shift left */
+    width: 420px;
+    /* adjust to make it larger or smaller */
+    opacity: 0.95;
+    z-index: 2;
+    /* behind the white container */
+}
+
+.export-pot-img {
+    position: absolute;
+    bottom: -10px;
+    /* pushes it below the white box */
+    left: 0px;
+    /* adjust horizontally */
+    width: 120px;
+    /* adjust for size */
+    height: auto;
+    opacity: 0.9;
+    /* make it visible but soft */
+    z-index: 1;
+    /* between leaf background (0) and container (2) */
+}
+
+
+.export-container {
+    margin-top: -240px;
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 28px;
+    background: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    z-index: 1;
+    /* ensures it stays above the leaf */
+}
+
+
+
+
+
+
+.export-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+    z-index: 2;
+    position: relative;
+}
+
+.export-desc {
+    font-size: 14px;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    z-index: 2;
+    position: relative;
+}
+
+.export-modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 2;
+    position: relative;
+}
+
+.mode-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    width: 380px;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mode-card:hover {
+    transform: scale(1.03);
+}
+
+.mode-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mode-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+    color: #fff;
+}
+
+.mode-overlay h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+    color: #fff;
+}
+
+
+
+.mode-icon {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode-icon img {
+    width: 25px;
+    height: 25px;
+    filter: brightness(100);
+}
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+
+
+/* === GLOBAL PRESENCE SECTION === */
+.global-presence-section {
+    margin-top: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.presence-header h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.presence-header p {
+    font-size: 16px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.presence-map {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.map-final {
+    align-items: center;
+    margin-left: -209px;
+    width: 138%;
+    border-radius: 10px;
+
+}
+
+
+/* Decorative top-right leaf */
+.leaf-decor {
+    position: absolute;
+    top: -280px;
+    right: -180px;
+    width: 240px;
+    /* adjust if needed */
+    opacity: 0.9;
+    z-index: 2;
+    transform: rotate(-15deg);
+    /* tilt slightly inward */
+    transform-origin: top right;
+    /* keeps it anchored neatly */
+    pointer-events: none;
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/* === FAQ SECTION === */
+.faq-section {
+    margin-top: -110px;
+    position: relative;
+    background: #d6e6d8;
+    /* soft green base layer */
+    padding: 120px 0;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* Add transparent image as overlay */
+.faq-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/PlantCollectionBG.png") center/cover no-repeat;
+    background-size: 120%;
+    /* increase from 100% to zoom in */
+    opacity: 0.06;
+    /* adjust transparency: 0.2–0.4 works best */
+    z-index: 0;
+}
+
+/* Keep content above the overlay */
+.faq-container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.faq-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-number {
+    font-weight: 700;
+    color: #111;
+    margin-right: 15px;
+}
+
+.faq-text {
+    flex: 1;
+    font-weight: 600;
+}
+
+.faq-icon {
+    font-size: 20px;
+    color: #222;
+    margin-left: 15px;
+}
+
+
+
+
+.faq-answer {
+    padding: 0 28px 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-question {
+    font-weight: 700;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/* === NEWSLETTER SECTION === */
+.newsletter-section {
+    position: relative;
+    background: #ffffff;
+    padding: 120px 0;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.newsletter-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: #111;
+    text-align: left;
+    margin-bottom: -10px;
+}
+
+.newsletter-desc {
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 18px 24px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    font-size: 15px;
+    outline: none;
+    color: #333;
+    font-family: inherit;
+}
+
+.newsletter-form button {
+    background: #32b768;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 60px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #2aa05b;
+}
+
+/* === NEWSLETTER SECTION DECORATIONS === */
+.leaf-left-1 {
+    position: absolute;
+    top: 180px;
+    left: -120px;
+    width: 500px;
+    opacity: 0.8;
+    transform: rotate(-8deg);
+    z-index: 0;
+}
+
+.leaf-left-2 {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    width: 350px;
+    opacity: 0.6;
+    transform: rotate(-40deg);
+    z-index: 0;
+}
+
+/* === RIGHT-SIDE LEAF DECORATIONS === */
+.leaf-right-1 {
+    position: absolute;
+    bottom: 10px;
+    right: -40px;
+    width: 230px;
+    opacity: 0.6;
+    transform: rotate(-8deg);
+    z-index: 0;
+}
+
+.leaf-right-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    width: 180px;
+    opacity: 0.6;
+    transform: rotate(25deg);
+    z-index: 0;
+}
