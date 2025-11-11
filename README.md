@@ -1,4 +1,4 @@
-🌿 Serendib Flora — Frontend Website
+Serendib Flora — Frontend Website
 
 Serendib Flora is a modern, responsive frontend website designed to showcase the product range, brand identity, and export capabilities of Serendib Flora Pvt Ltd, a horticultural and landscaping company. The project highlights the beauty of tropical plants through clean design, engaging visuals, and smooth user interaction.
 
