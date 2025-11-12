@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serendib Flora</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -207,132 +208,75 @@
 
 
 
-    <!-- BEST SELLING SECTION -->
-    <section class="best-selling-section">
-        <h2 class="section-title">BEST SELLING</h2>
-        <img id="previewImage" class="preview-image" src="images/dracaena.png" alt="Preview Plant" />
 
-
-        <div class="best-selling-content">
-            <div class="product-info">
-                <div class="info-row">
-                    <h3 id="plantName">Dracaena Plant</h3>
-                    <p id="plantDesc">
-                        Dracaena Sanderiana thrives indoors with tall, elegant stems and glossy green leaves that
-                        radiate freshness, purify air, and blend
-                        beautifully with modern or classic interior designs. It adapts easily to low light and minimal
-                        watering, staying vibrant year-round
-                        while adding a calm, tropical atmosphere naturally.
+    <!-- BEST SELLING - FEATURED PRODUCTS – AUTO ROTATING CAROUSEL -->
+    <!-- FEATURED PRODUCTS – AUTO ROTATING CAROUSEL -->
+    <section class="featured-carousel-section">
+        <div class="featured-carousel-container">
+            <h2 class="featured-carousel-title">BEST SELLING</h2>
+            <div class="featured-info">
+                <h3 id="featuredName">Dracaena</h3>
+                <p id="featuredDesc">
+                    Elegant indoor plant with rich green leaves, perfect for modern interiors.
+                </p>
+                <button class="featured-btn">Explore All</button>
+            </div>
+            <div class="featured-carousel-grid">
+                <div class="featured-card is-active">
+                    <img src="images/dracaena.png" alt="Dracaena" class="featured-img" />
+                    <h3 class="featured-name">Dracaena</h3>
+                    <p class="featured-desc">
+                        Elegant indoor plant with rich green leaves, perfect for modern interiors.
                     </p>
                 </div>
-                <button class="explore10-btn">Explore All</button>
-            </div>
 
-            <div class="product-slider" id="productSlider">
-
-                <div class="product-card" data-name="Dracaena Plant"
-                    data-desc="Dracaena Sanderiana thrives indoors with tall, elegant stems and glossy green leaves that radiate freshness, purify air, and blend beautifully with modern or classic interior designs. It adapts easily to low light and minimal watering, staying vibrant year-round while adding a calm, tropical atmosphere naturally."
-                    data-img="images/dracaena.png">
-                    <img src="images/dracaena.png" alt="Dracaena" />
-                    <h4>Dracaena Plant</h4>
+                <div class="featured-card">
+                    <img src="images/moneyplant.png" alt="Money Plant" class="featured-img" />
+                    <h3 class="featured-name">Money</h3>
+                    <p class="featured-desc">
+                        A classic favorite for good luck and effortless air purification.
+                    </p>
                 </div>
 
-                <div class="product-card" data-name="Snake Plant"
-                    data-desc="Snake Plant stands firm with upright sword-like leaves that tolerate neglect, resist pests, and thrive under artificial or dim light conditions effortlessly all year round. It naturally filters toxins, produces oxygen at night, and maintains its crisp shape, perfect for minimalists seeking fresh, resilient greenery indoors."
-                    data-img="images/snakeplant.png">
-                    <img src="images/snakeplant.png" alt="Snake Plant" />
-                    <h4>Snake Plant</h4>
+                <div class="featured-card">
+                    <img src="images/snakeplant.png" alt="Snake Plant" class="featured-img" />
+                    <h3 class="featured-name">Snake</h3>
+                    <p class="featured-desc">
+                        Hardy and low-maintenance, thrives in low light with minimal watering.
+                    </p>
                 </div>
 
-                <div class="product-card" data-name="Money Plant"
-                    data-desc="Money Plant spreads positivity and lush green charm through its heart-shaped leaves that climb elegantly along trellises or flow freely from hanging pots indoors. It grows easily in both water and soil, needs very little maintenance, and symbolizes prosperity, making it a favorite for home decoration."
-                    data-img="images/moneyplant.png">
-                    <img src="images/moneyplant.png" alt="Money Plant" />
-                    <h4>Money Plant</h4>
+                <div class="featured-card">
+                    <img src="images/rubber.png" alt="Rubber Plant" class="featured-img" />
+                    <h3 class="featured-name">Rubber</h3>
+                    <p class="featured-desc">
+                        Glossy, broad leaves bring a clean, bold aesthetic to any room.
+                    </p>
                 </div>
 
-                <div class="product-card" data-name="Rubber Plant"
-                    data-desc="Rubber Plant showcases broad, shiny leaves that stand out in light or shade, bringing structure and modern appeal to living rooms or offices instantly. It thrives with moderate watering and indirect sunlight, cleans indoor air effectively, and offers an impressive tropical look requiring surprisingly little ongoing care."
-                    data-img="images/rubber.png">
-                    <img src="images/rubber.png" alt="Rubber Plant" />
-                    <h4>Rubber Plant</h4>
+                <div class="featured-card">
+                    <img src="images/ficus.png" alt="Ficus" class="featured-img" />
+                    <h3 class="featured-name">Ficus</h3>
+                    <p class="featured-desc">
+                        Lush and vibrant, adds a natural tropical charm to indoor spaces.
+                    </p>
                 </div>
-
-                <div class="product-card" data-name="Ficus Plant"
-                    data-desc="Ficus features dense green foliage and a naturally sculpted form that enhances minimal or cozy interiors, creating balance through its lush textured growth. It thrives in diffused sunlight, appreciates consistent moisture, and continues to flourish quietly, blending into both home and workplace environments with timeless elegance."
-                    data-img="images/ficus.png">
-                    <img src="images/ficus.png" alt="Ficus" />
-                    <h4>Ficus Plant</h4>
-                </div>
-
-                <div class="product-card" data-name="Gardenia Plant"
-                    data-desc="Gardenia blooms fill the air with fragrance, displaying creamy white petals against glossy green leaves that instantly uplift indoor or balcony spaces gracefully. It enjoys gentle sunlight, evenly moist soil, and occasional misting, rewarding steady care with soft blossoms that symbolize peace, purity, and refined simplicity."
-                    data-img="images/gardenia.png">
-                    <img src="images/gardenia.png" alt="Gardenia" />
-                    <h4>Gardenia Plant</h4>
-                </div>
-
-                <div class="product-card" data-name="Croton Plant"
-                    data-desc="Croton’s vibrant foliage glows with yellow, red, and orange hues, making every plant look like living art within contemporary home designs or terraces. It loves bright indirect light, needs regular misting, and rewards attention with richly colored leaves that remain striking and bold through all growing seasons."
-                    data-img="images/croton.png">
-                    <img src="images/croton.png" alt="Croton" />
-                    <h4>Croton Plant</h4>
-                </div>
-
-                <div class="product-card" data-name="Difenbachia Plant"
-                    data-desc="Difenbachia stands out with its variegated leaves marked by cream and green patterns, offering elegance and volume to shaded interiors effortlessly all year. It grows well under filtered light, prefers slightly moist soil, and enhances indoor air quality, giving your rooms a soft, tropical accent naturally and beautifully."
-                    data-img="images/difenbachia.png">
-                    <img src="images/difenbachia.png" alt="Difenbachia" />
-                    <h4>Difenbachia Plant</h4>
-                </div>
-
-                <div class="product-card" data-name="Areca Palm"
-                    data-desc="Areca Palm’s feathery green fronds move gently in air, adding lightness and an island vibe to homes, hotels, or modern workspaces beautifully every day. It purifies air effectively, grows quickly in indirect light, and maintains lush foliage that softens interiors, evoking freshness and tropical relaxation throughout seasons."
-                    data-img="images/arecapalm.png">
-                    <img src="images/arecapalm.png" alt="Areca Palm" />
-                    <h4>Areca Palm</h4>
-                </div>
-
-                <div class="product-card" data-name="Caladium Plant"
-                    data-desc="Caladium dazzles with heart-shaped leaves painted in red, pink, and green tones that transform dull corners into vibrant, expressive art pieces instantly. It thrives under filtered sunlight, needs evenly moist soil, and introduces playful color variations that elevate mood and brighten interior décor during every growing season."
-                    data-img="images/pots.png">
-                    <img src="images/pots.png" alt="Caladium" />
-                    <h4>Caladium Plant</h4>
-                </div>
-
             </div>
 
         </div>
-
-        <script>
-            const cards = document.querySelectorAll(".product-card");
-            const plantName = document.getElementById("plantName");
-            const plantDesc = document.getElementById("plantDesc");
-            const previewImage = document.getElementById("previewImage");
-
-
-            cards.forEach(card => {
-                card.addEventListener("mouseenter", () => {
-                    // Update text when hovering over a card
-                    plantName.textContent = card.dataset.name;
-                    plantDesc.textContent = card.dataset.desc;
-                    previewImage.src = card.dataset.img;
-
-
-                    // Remove highlight from other cards
-                    cards.forEach(c => c.classList.remove("active"));
-                    // Highlight the hovered one
-                    card.classList.add("active");
-                });
-
-                // Optional: reset highlight when mouse leaves
-                card.addEventListener("mouseleave", () => {
-                    card.classList.remove("active");
-                });
-            });
-        </script>
-
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -512,6 +456,10 @@
 
 
 
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 
 
 

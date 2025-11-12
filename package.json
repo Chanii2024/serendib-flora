@@ -1,0 +1,13 @@
+{
+  "name": "serendib-flora",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "dependencies": {
+    "swiper": "^12.0.3"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
