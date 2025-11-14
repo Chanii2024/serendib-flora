@@ -17,6 +17,46 @@ function stepPx() {
 }
 
 
+function resetForwardState() {
+    cards.forEach((c) => {
+        c.style.transition = "none";
+        c.style.transform = "scale(0.83)";
+    });
+
+    // forward baseline: first column neutral
+    cards[0].style.transform = "scale(1)";
+
+    // clear grid movement
+    grid.style.transition = "none";
+    grid.style.transform = "translateX(0)";
+}
+
+
+
+function hardResetForward() {
+    cards = Array.from(document.querySelectorAll(".featured-card"));
+
+    // Remove transform leftovers WITHOUT overriding CSS
+    cards.forEach(c => {
+        c.style.transition = "none";
+        c.style.transform = "";   // ← empty, not "none"
+    });
+
+    // Only the FIRST card should be active again
+    cards.forEach(c => c.classList.remove("is-active"));
+    cards[0].classList.add("is-active");
+
+    // Reset grid
+    grid.style.transition = "none";
+    grid.style.transform = "translateX(0)";
+}
+
+
+
+
+// ---------------------------------------------
+// FORWARD (AUTO + NEXT)
+// ---------------------------------------------
 function rotateCards(isManual = false) {
     if (!isManual && isHoveringArrows) return;
     if (isAnimating) return;
@@ -32,7 +72,12 @@ function rotateCards(isManual = false) {
     const dist = stepPx();
     grid.style.transition = "transform 1s cubic-bezier(0.45, 0, 0.55, 1)";
     void grid.offsetWidth; // force reflow
-    grid.style.transform = `translateX(-${dist}px)`;
+
+    //Hey DO NOT Apply it for Auto Scrolling!!!!!
+    const travel = isManual ? dist + 60 : dist;
+    grid.style.transform = `translateX(-${travel}px)`;
+
+
 
     setTimeout(() => {
         // move first card to end with smooth entry
@@ -52,13 +97,14 @@ function rotateCards(isManual = false) {
         }, 50);
 
 
-        // reset position instantly
-        grid.style.transition = "none";
-        grid.style.transform = "translateX(0)";
 
         // lock active on new first
         cards.forEach(c => c.classList.remove("is-active"));
         cards[0].classList.add("is-active");
+
+        // FIX: reset grid AFTER full animation completes
+        grid.style.transition = "none";
+        grid.style.transform = "translateX(0)";
 
         // wait a bit, then clear inline transforms (keep smooth entry)
         setTimeout(() => {
@@ -75,51 +121,105 @@ function rotateCards(isManual = false) {
 
 
 
+
+
+
+
+// ---------------------------------------------
+// NEXT BUTTON
+// ---------------------------------------------
 function manualNext() {
     clearInterval(autoRotate);
+
+    hardResetForward();   // ← THIS FIXES EVERYTHING
+
     rotateCards(true);
     if (!isHoveringArrows) startRotation();
 }
 
 
 
+
+
+
+// ---------------------------------------------
+// BACKWARD (PREV) — PERFECT MIRROR OF FORWARD
+// ---------------------------------------------
 function manualPrev() {
     if (isAnimating) return;
     isAnimating = true;
     clearInterval(autoRotate);
 
-    // Reverse slide
-    const last = cards.pop();
-    last.style.transition = "none";
-    last.style.opacity = "0";
-    last.style.transform = "translateX(-60px)";
-    grid.insertBefore(last, cards[0]);
-    cards = Array.from(document.querySelectorAll(".featured-card"));
+    const dist = stepPx();
+
+    // reset first to big + others to small
+    cards.forEach((c, i) => {
+        c.style.transition = "none";
+        c.style.transform = (i === 0) ? "scale(1.1)" : "scale(0.83)";
+    });
+
+    // mark last card active (mirror of forward)
+    cards.forEach(c => c.classList.remove("is-active"));
+    cards[cards.length - 1].classList.add("is-active");
+
+    // card going from col 1 → col 2
+    const slideCard = cards[0];
+    slideCard.style.transition = "none";
+    slideCard.style.transform = "scale(1.1) translateX(-10px)";  // start big (mirror forward)
+
+    // slide right
+    grid.style.transition = "transform 0.9s cubic-bezier(0.45,0,0.55,1)";
+    grid.style.transform = `translateX(${dist}px)`;
+
+    // shrink mid-way (mirror forward)
+    requestAnimationFrame(() => {
+        slideCard.style.transition = "transform 1s cubic-bezier(0.45,0,0.55,1)";
+        slideCard.style.transform = "scale(0.83)";
+    });
 
     setTimeout(() => {
-        last.style.transition = "transform 0.8s ease, opacity 0.8s ease";
-        last.style.opacity = "1";
-        last.style.transform = "translateX(0) scale(0.83)";
-    }, 40);
+        // move last card to front
+        const moved = cards.pop();
+        moved.style.transition = "none";
+        moved.style.opacity = "0";
+        moved.style.transform = "translateX(0px)";
+        grid.insertBefore(moved, cards[0]);
+        cards = Array.from(document.querySelectorAll(".featured-card"));
 
-    setTimeout(() => {
-        cards.forEach(c => {
-            c.classList.remove("is-active");
-            c.style.transform = "";   // ← important: clear leftover transforms
-        });
+        // new first column card grows (mirror forward)
+        setTimeout(() => {
+            moved.style.transition = "transform 0.9s ease, opacity 0.8s ease";
+            moved.style.opacity = "1";
+            moved.style.transform = "translateX(0px) scale(1.1)";
+        }, 20);
 
-        cards[0].classList.add("is-active");
+        // reset grid instantly
+        grid.style.transition = "none";
+        grid.style.transform = "translateX(0px)";
+
+        // stable final scale positions
+        setTimeout(() => {
+            cards.forEach((c, i) => {
+                c.style.transition = "none";
+                c.style.transform = (i === 0) ? "scale(1.1)" : "scale(0.83)";
+            });
+        }, 850);
 
         updateFeaturedInfo();
         isAnimating = false;
-    }, 550); // slight delay gives smoother sizing
+        if (!isHoveringArrows) startRotation();
 
-
-    if (!isHoveringArrows) startRotation();
-
+    }, 1000);
 }
 
 
+
+
+
+
+// ---------------------------------------------
+// AUTOPLAY
+// ---------------------------------------------
 
 // autoplay control
 function startRotation() {
@@ -129,6 +229,14 @@ function startRotation() {
 }
 
 
+
+
+
+
+
+// ---------------------------------------------
+// HOVER BEHAVIOUR
+// ---------------------------------------------
 
 // pause on hover
 grid.addEventListener("mouseenter", () => clearInterval(autoRotate));
@@ -147,13 +255,12 @@ arrowBox.addEventListener("mouseleave", () => {
     startRotation();
 });
 
-
-
-
-
-
 // start it
 startRotation();
+
+
+
+
 
 
 

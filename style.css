@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(to right, #ffffff, #f6fff7);
+    background: linear-gradient(to right, #ffffff, hsl(0, 0%, 100%));
     color: #111;
     overflow-x: hidden;
     /* prevents unwanted right-side scroll */
@@ -14,6 +14,25 @@ img {
     max-width: 100%;
     box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*        -------                Start               ------                    */
+
+
+
+
 
 
 
@@ -181,6 +200,114 @@ img {
     transform: rotate(-15deg);
     z-index: 1;
 }
+
+
+/* === HERO SECTION — MOBILE FIXES === */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+
+    .hero-section {
+        margin-top: 40px;
+        flex-direction: column;
+        padding: 40px 0px;
+        text-align: left;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        width: 70%;
+        margin-left: 0;
+        margin-bottom: 25px;
+    }
+
+    .explore-btn {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-top: 10px;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .plant-img {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        right: 0;
+    }
+
+
+    .hero-image::before {
+        width: 200px;
+        height: 200px;
+        right: 0;
+        /* stops overflow */
+        bottom: -30px;
+        opacity: 0.18;
+        filter: blur(0.5px);
+    }
+
+
+    .info-card {
+        transform: scale(0.9);
+    }
+
+    .daylight {
+        top: 20px;
+        right: 20px;
+    }
+
+    .wetness {
+        bottom: 40px;
+        left: auto;
+        right: 20px;
+    }
+
+    .arrow-daylight,
+    .arrow-wetness {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -853,6 +980,8 @@ img {
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
+
+    margin-bottom: 100px;
 }
 
 .featured-carousel-title {
@@ -941,18 +1070,18 @@ img {
 .featured-card.is-active .featured-img {
     transform: scale(3.7) translateX(-1px) translateY(-20px);
 }
-.featured-card.is-active .featured-name
-{
+
+.featured-card.is-active .featured-name {
     margin-left: 5px;
 }
 
-.featured-card.is-active .featured-name, .featured-desc
-{
+.featured-card.is-active .featured-name,
+.featured-desc {
     transform: scale(1.1);
 }
 
-.featured-card.is-active .featured-name, .featured-desc
-{
+.featured-card.is-active .featured-name,
+.featured-desc {
     transform: scale(1.1);
 }
 
@@ -1049,7 +1178,7 @@ img {
     font-size: 28px;
     font-weight: 700;
     color: #1a3a27;
-    margin-bottom: 10px;
+    margin-bottom: -40px;
 }
 
 .featured-info p {
@@ -1062,7 +1191,7 @@ img {
 
 .featured-btn {
     position: relative;
-    top: -150px;
+    top: -110px;
     /* move up — increase this to go higher */
     background: #32b768;
     color: #fff;
@@ -1125,14 +1254,14 @@ img {
     z-index: 1;
     /* pushes it behind */
     padding: 100px 120px;
-    background: #f8fcf9;
+    background: #ffffff;
     font-family: "Poppins", sans-serif;
     overflow: visible;
 }
 
 .export-bg-img {
     position: absolute;
-    top: -300px;
+    top: -500px;
     /* move it higher to peek out */
     left: 0px;
     /* shift left */
@@ -1160,11 +1289,11 @@ img {
 
 
 .export-container {
-    margin-top: -240px;
+    margin-top: -440px;
     position: relative;
     border: 2px solid #ffffff;
     border-radius: 28px;
-    background: #fff;
+    background: #ffffff;
     padding: 60px 40px;
     text-align: center;
     z-index: 1;
@@ -1273,8 +1402,8 @@ img {
 
 /* === GLOBAL PRESENCE SECTION === */
 .global-presence-section {
-    margin-top: 10px;
-    background-color: white;
+    margin-top: -60px;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     padding: 100px 0;
     position: relative;
