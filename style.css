@@ -158,7 +158,7 @@ img {
 .wetness {
     bottom: 110px;
     margin-left: 15px;
-    
+
 }
 
 /* === ARROW IMAGES === */
@@ -859,9 +859,10 @@ img {
     font-size: 50px;
     font-weight: 700;
     color: #1a3a27;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     letter-spacing: -0.5px;
-    margin-left: -800px;
+    margin-left: -860px;
+    margin-top: 55px;
 }
 
 .featured-carousel-grid {
@@ -938,7 +939,21 @@ img {
 
 
 .featured-card.is-active .featured-img {
-    transform: scale(3.5) translateY(-20px);
+    transform: scale(3.7) translateX(-1px) translateY(-20px);
+}
+.featured-card.is-active .featured-name
+{
+    margin-left: 5px;
+}
+
+.featured-card.is-active .featured-name, .featured-desc
+{
+    transform: scale(1.1);
+}
+
+.featured-card.is-active .featured-name, .featured-desc
+{
+    transform: scale(1.1);
 }
 
 .featured-name {
@@ -955,9 +970,72 @@ img {
     padding: 0 5px;
 }
 
+
+
+/* === MANUAL ARROWS ABOVE INFO === */
+.featured-arrows {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    /* adjust later if needed */
+}
+
+/* LEFT ARROW — white outline, white arrow, transparent bg */
+.featured-arrow.left-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3.5px solid #8aba99;
+    background: transparent;
+    color: #377551;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* RIGHT ARROW — white bg, green arrow */
+.featured-arrow.right-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    color: #32b768;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Optional hover if you want */
+.featured-arrow.left-arrow:hover {
+    opacity: 0.8;
+    color: rgb(8, 31, 8);
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+}
+
+.featured-arrow.right-arrow:hover {
+    background: #d5eedc;
+    border: 3.5px solid #8aba99;
+    font-size: 30px;
+}
+
+
+
 /* === FEATURED INFO BOX === */
 .featured-info {
-    margin-top: -20px;
+    margin-top: 0px;
     /* space below BEST SELLING */
     margin-left: 500px;
     text-align: left;
@@ -978,13 +1056,13 @@ img {
     font-size: 15px;
     color: #333;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
     margin-left: 300px;
 }
 
 .featured-btn {
     position: relative;
-    top: -180px;
+    top: -150px;
     /* move up — increase this to go higher */
     background: #32b768;
     color: #fff;
@@ -1000,9 +1078,6 @@ img {
 .featured-btn:hover {
     background: #279b5b;
 }
-
-
-
 
 
 @media (max-width: 1200px) {
@@ -1031,6 +1106,10 @@ img {
         width: 90%;
     }
 }
+
+
+
+
 
 
 
