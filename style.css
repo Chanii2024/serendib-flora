@@ -325,7 +325,7 @@ img {
 }
 
 .product-box {
-    background: #72cf84;
+    background: #5dcb73;
     border-radius: 15px;
     width: 95%;
     margin: 0 auto;
@@ -339,15 +339,15 @@ img {
 .product-box::before {
     content: "";
     position: absolute;
-    top: -80px;
+    top: -90px;
     /* lift it higher to hide top gap */
     left: 0px;
     /* extend slightly to the left */
-    width: 690px;
+    width: 680px;
     /* make it a bit wider */
-    height: 140px;
+    height: 165px;
     /* increase height for full overlap */
-    background: #72cf84;
+    background: #5dcb73;
     clip-path: polygon(0 -300%, 100% 75%, 100% 100%, 0 100%);
     z-index: 2;
     /* keeps it above the main box */
@@ -362,10 +362,10 @@ img {
 
 .product-box h2 {
     color: #fff;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 600;
     margin-bottom: 15px;
-    margin-top: -110px;
+    margin-top: -120px;
     margin-left: -1040px;
     /* pulls it upward */
     position: relative;
@@ -376,14 +376,14 @@ img {
 
 .product-box p {
     color: #eaffec;
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom: 50px;
     line-height: 1.6;
     text-align: left;
     /* move text to the left */
     max-width: 550px;
     /* keeps it nicely aligned under title */
-    margin-left: 0px;
+    margin-left: -16px;
     /* same alignment as your heading */
     margin-top: -10px;
     /* small vertical adjustment */
@@ -404,7 +404,7 @@ img {
 .product-card {
     background: #fff;
     border-radius: 16px;
-    width: 180px;
+    width: 190px;
     padding: 20px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -1467,26 +1467,23 @@ img {
     margin-top: -110px;
     position: relative;
     background: #d6e6d8;
-    /* soft green base layer */
-    padding: 120px 0;
+    padding: 140px 0;
     font-family: "Poppins", sans-serif;
     overflow: hidden;
+    margin-bottom: -50px;
 }
 
-/* Add transparent image as overlay */
+/* Subtle botanical background overlay */
 .faq-section::before {
     content: "";
     position: absolute;
     inset: 0;
     background: url("images/PlantCollectionBG.png") center/cover no-repeat;
-    background-size: 120%;
-    /* increase from 100% to zoom in */
-    opacity: 0.06;
-    /* adjust transparency: 0.2–0.4 works best */
+    opacity: 0.04; /* lighter = cleaner */
     z-index: 0;
 }
 
-/* Keep content above the overlay */
+/* Content wrapper */
 .faq-container {
     position: relative;
     z-index: 1;
@@ -1495,24 +1492,33 @@ img {
     padding: 0 20px;
 }
 
-
+/* Title */
 .faq-title {
-    font-size: 42px;
+    margin-top: -50px;
+    font-size: 48px;
     font-weight: 700;
-    text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: #111;
+    text-align: left;
 }
 
+/* FAQ item */
 .faq-item {
     background: #fff;
-    border-radius: 18px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Gentle lift on hover */
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Question row */
 .faq-question {
     width: 100%;
     background: none;
@@ -1521,47 +1527,59 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 28px;
-    font-size: 15px;
+    padding: 26px 30px;
+    font-size: 16px;
     font-weight: 600;
     color: #111;
     cursor: pointer;
-    text-align: left;
+    transition: color 0.2s ease;
 }
 
+/* Number */
 .faq-number {
     font-weight: 700;
     color: #111;
-    margin-right: 15px;
+    margin-right: 18px;
+    font-size: 16px;
 }
 
+/* Question text */
 .faq-text {
     flex: 1;
     font-weight: 600;
+    color: #111;
 }
 
+/* Arrow icon */
 .faq-icon {
     font-size: 20px;
     color: #222;
-    margin-left: 15px;
+    transition: transform 0.3s ease;
 }
 
+/* Rotate icon when open */
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
 
-
-
+/* Answer */
 .faq-answer {
-    padding: 0 28px 24px;
-    font-size: 14px;
-    line-height: 1.7;
+    padding: 0 30px 24px;
+    font-size: 15px;
+    line-height: 1.75;
     color: #333;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.2s ease;
+    opacity: 0;
 }
 
-.faq-item.active .faq-question {
-    font-weight: 700;
+/* Show answer */
+.faq-item.active .faq-answer {
+    opacity: 1;
+    max-height: 300px;
 }
+
 
 
 
@@ -1622,7 +1640,7 @@ img {
 }
 
 .newsletter-form button {
-    background: #32b768;
+    background: #25be62;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
